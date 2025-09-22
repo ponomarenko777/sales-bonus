@@ -43,11 +43,9 @@ function analyzeSalesData(data, options) {
   if (
     !data ||
     !Array.isArray(data.sellers) ||
-    !Array.isArray(data.customers) ||
     !Array.isArray(data.purchase_records) ||
     !Array.isArray(data.products) ||
     data.sellers.length === 0 ||
-    data.customers.length === 0 ||
     data.purchase_records.length === 0 ||
     data.products.length === 0
   ) {
@@ -55,7 +53,7 @@ function analyzeSalesData(data, options) {
   }
   // @TODO: Проверка наличия опций
   if (typeof options === "object" && options !== null) {
-    const { calculateRevenue, calculateBonus } = options || {};
+    const { calculateRevenue, calculateBonus } = options;
 
     if (
       !calculateRevenue ||
